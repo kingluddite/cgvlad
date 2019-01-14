@@ -1,56 +1,55 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
+// custom styles
 import '../assets/scss/main.scss';
-import Header from './Header';
-import Menu from './Menu';
+
+// custom components
+import Navbar from './Navbar';
+import SideDrawer from './SideDrawer/SideDrawer';
+import Backdrop from './Backdrop/Backdrop';
 import Contact from './Contact';
 import Footer from './Footer';
 
 class Layout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMenuVisible: false,
-      loading: 'is-loading',
-    };
-    this.handleToggleMenu = this.handleToggleMenu.bind(this);
-  }
+  state = {
+    sideDrawerOpen: false,
+  };
 
-  componentDidMount() {
-    this.timeoutId = setTimeout(() => {
-      this.setState({ loading: '' });
-    }, 100);
-  }
+  // NOTE: bad practice --> this.setState({sideDrawerOpen: !this.state.sideDrawerOpen});
+  // with the way that React batch updates
+  // you are not guaranteed the state changed whenever {sideDrawerOpen: !this.state.sideDrawerOpen} the next time
+  // Better Way: Pass a function to setState and in that function
+  // you will receive the `prevState` as an argument to that function
+  // This is passed to the function by React
+  drawerToggleClickHandler = () => {
+    this.setState(prevState => ({ sideDrawerOpen: !prevState.sideDrawerOpen }));
+  };
 
-  componentWillUnmount() {
-    if (this.timeoutId) {
-      clearTimeout(this.timeoutId);
-    }
-  }
-
-  handleToggleMenu() {
-    this.setState({
-      isMenuVisible: !this.state.isMenuVisible,
-    });
-  }
+  backdropClickHandler = () => {
+    this.setState({ sideDrawerOpen: false });
+  };
 
   render() {
     const { children } = this.props;
+    const { sideDrawerOpen } = this.state;
+
+    let backdrop;
+
+    if (sideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />;
+    }
 
     return (
-      <div
-        className={`body ${this.state.loading} ${
-          this.state.isMenuVisible ? 'is-menu-visible' : ''
-        }`}
-      >
-        <div id="wrapper">
-          <Header onToggleMenu={this.handleToggleMenu} />
+      <div>
+        <div id="wrapper" style={{ height: '100%' }}>
+          <Navbar drawerClickHandler={this.drawerToggleClickHandler} />
+          <SideDrawer show={sideDrawerOpen} />
+          {backdrop}
           {children}
           <Contact />
           <Footer />
         </div>
-        <Menu onToggleMenu={this.handleToggleMenu} />
       </div>
     );
   }
