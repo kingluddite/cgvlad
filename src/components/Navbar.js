@@ -105,10 +105,22 @@ const Navbar = props => (
       <div className="nav-items">
         <ul>
           <li>
-            <Link to="/">Products</Link>
+            <Link to="/print">Print Work</Link>
           </li>
           <li>
-            <Link to="/">Users</Link>
+            <Link to="/">Reel</Link>
+          </li>
+          <li>
+            <Link to="/">Gallery</Link>
+          </li>
+          <li>
+            <Link to="/">Clips</Link>
+          </li>
+          <li>
+            <Link to="/">Resume</Link>
+          </li>
+          <li>
+            <Link to="/">Contact</Link>
           </li>
         </ul>
       </div>
