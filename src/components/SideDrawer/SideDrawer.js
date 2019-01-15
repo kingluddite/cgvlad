@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const SideDrawerContainer = styled.nav`
   height: 100%;
@@ -53,6 +54,7 @@ const SideDrawerContainer = styled.nav`
     padding: 0.5rem;
   }
 `;
+
 const SideDrawer = props => {
   const { show } = props;
   let drawerClasses = 'side-drawer';
@@ -85,6 +87,10 @@ const SideDrawer = props => {
       </ul>
     </SideDrawerContainer>
   );
+};
+
+SideDrawer.propTypes = {
+  show: PropTypes.bool.isRequired,
 };
 
 export default SideDrawer;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 // custom components
 import DrawerToggleButton from './SideDrawer/DrawerToggleButton';
@@ -92,11 +93,11 @@ const ToggleButton = styled.div`
   }
 `;
 
-const Navbar = props => (
+const Navbar = ({ drawerClickHandler }) => (
   <NavbarStyles>
     <nav className="navbar">
       <ToggleButton className="nav-toggle-button">
-        <DrawerToggleButton click={props.drawerClickHandler} />
+        <DrawerToggleButton click={drawerClickHandler} />
       </ToggleButton>
       <div className="nav-logo">
         <Link to="/">CGVLAD</Link>
@@ -127,5 +128,9 @@ const Navbar = props => (
     </nav>
   </NavbarStyles>
 );
+
+Navbar.propTypes = {
+  drawerClickHandler: PropTypes.func.isRequired,
+};
 
 export default Navbar;

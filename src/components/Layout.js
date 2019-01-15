@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 // custom styles
 import '../assets/scss/main.scss';
@@ -7,11 +7,15 @@ import '../assets/scss/main.scss';
 // custom components
 import Navbar from './Navbar';
 import SideDrawer from './SideDrawer/SideDrawer';
-import Backdrop from './Backdrop/Backdrop';
+import Backdrop from './Backdrop';
 import Contact from './Contact';
 import Footer from './Footer';
 
 class Layout extends React.Component {
+  static propTypes = {
+    children: PropTypes.object.isRequired,
+  };
+
   state = {
     sideDrawerOpen: false,
   };

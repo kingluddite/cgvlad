@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const BackdropStyles = styled.div`
   position: fixed;
@@ -11,6 +12,10 @@ const BackdropStyles = styled.div`
   z-index: 240;
 `;
 
-const Backdrop = props => <BackdropStyles onClick={props.click} />;
+const Backdrop = ({ click }) => <BackdropStyles onClick={click} />;
+
+Backdrop.propTypes = {
+  click: PropTypes.func.isRequired,
+};
 
 export default Backdrop;
