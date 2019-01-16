@@ -46,7 +46,7 @@ const NavbarStyles = styled.header`
     }
 
     .nav-items li {
-      padding: 0 0.5rem;
+      padding: 0 1.5rem;
     }
 
     .nav-items a {
