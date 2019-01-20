@@ -40,3 +40,43 @@ collections:
           - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
           - {label: Full_image, name: full_image, widget: image}
           - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
+      - file: "src/pages/clips/index.md"
+        label: "Clips Page"
+        name: "clips"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "clip-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Description, name: description, widget: string}
+      - file: "src/pages/gallery/index.md"
+        label: "Gallery Page"
+        name: "gallery"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "clip-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Description, name: description, widget: string}
+      - file: "src/pages/print/index.md"
+        label: "Print Page"
+        name: "print"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "print-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Description, name: description, widget: string}
+      - file: "src/pages/reel/index.md"
+        label: "Reel Page"
+        name: "reel"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "reel-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Description, name: description, widget: string}
+      - file: "src/pages/resume/index.md"
+        label: "Resume Page"
+        name: "resume"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "reel-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Description, name: description, widget: string}
