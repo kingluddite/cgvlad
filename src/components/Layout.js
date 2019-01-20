@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 import '../assets/scss/main.scss';
 
 // custom components
-import Navbar from './Navbar';
-import SideDrawer from './SideDrawer/SideDrawer';
-import Backdrop from './Backdrop';
-import Contact from './Contact';
-import Footer from './Footer';
+import Navbar from './shared/Navbar/Navbar';
+import SideDrawer from './shared/SideDrawer/SideDrawer';
+import Backdrop from './shared/SideDrawer/Backdrop';
+import Contact from './shared/Contact';
+import Footer from './shared/Footer';
 
 class Layout extends React.Component {
   static propTypes = {
