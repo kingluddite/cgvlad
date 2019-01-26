@@ -1,16 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const SlideStyles = styled.div`
-  height: 100%;
-  width: 100%;
-`;
-const Slide = () => {
-  return (
-    <div className="slide">
-      <p>Slide</p>
-    </div>
-  );
+const Slide = ({ image }) => {
+  const styles = {
+    backgroundImage: `url(${image})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: '50% 60%',
+    display: 'inline-block',
+    height: '100%',
+    width: '100%',
+  };
+
+  return <div className="slide" style={styles} />;
+};
+
+Slide.propTypes = {
+  image: PropTypes.string.isRequired,
 };
 
 export default Slide;

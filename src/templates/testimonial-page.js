@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import { v4 } from 'uuid';
 
 // custom components
 import Layout from '../components/Layout';
@@ -10,12 +11,7 @@ import Testimonials from '../components/Testimonials';
 // images
 // import logo from '../assets/images/cgvlad-logo.png';
 
-export const TestimonialPageTemplate = ({
-  title,
-  heading,
-  description,
-  testimonials,
-}) => (
+export const TestimonialPageTemplate = ({ title, heading, description, testimonials }) => (
   <>
     <Helmet title={`${title} | `} />
     <div id="main" className="alt-colors">

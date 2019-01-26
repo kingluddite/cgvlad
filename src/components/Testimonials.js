@@ -7,17 +7,15 @@ import Slider from './Slider/Slider';
 
 const Testimonials = ({ testimonials }) => (
   <div>
+    <Slider />
     {testimonials.map(testimonial => (
-      <>
-        <article key={v4()} className="message">
-          <div className="message-body">
-            {testimonial.quote}
-            <br />
-            <cite> – {testimonial.author}</cite>
-          </div>
-        </article>
-        <Slider />
-      </>
+      <article key={v4()} className="message">
+        <div className="message-body">
+          {testimonial.quote}
+          <br />
+          <cite> – {testimonial.author}</cite>
+        </div>
+      </article>
     ))}
   </div>
 );
