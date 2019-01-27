@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "precommit": "lint-staged",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
@@ -37,6 +36,7 @@
     "gatsby-source-filesystem": "^2.0.16",
     "gatsby-transformer-remark": "^2.2.0",
     "gatsby-transformer-sharp": "^2.1.10",
+    "lint-staged": "^8.1.0",
     "lodash": "^4.17.11",
     "lodash-webpack-plugin": "^0.11.5",
     "netlify-cms": "^2.3.3",
@@ -66,5 +66,10 @@
     "prettier": "^1.15.3",
     "pretty-quick": "^1.8.0",
     "react-testing-library": "^5.4.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
