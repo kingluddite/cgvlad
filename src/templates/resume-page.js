@@ -5,9 +5,23 @@ import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 // import logo from '../assets/images/cgvlad-logo.png';
 
-export const ResumePageTemplate = ({ title, heading, description }) => (
+export const ResumePageTemplate = ({
+  title,
+  heading,
+  description,
+  my_name,
+  my_skills,
+  statement
+}) => (
   <>
     <Helmet title={`${title} | `} />
+    <div class="id">
+      <h1>{my_name}</h1>
+      <h2>{my_skills}</h2>
+    </div>
+
+    <p class="statement">{statement}</p>
+
     <div id="main" className="alt-colors">
       <section id="section-one">
         <div className="inner">
@@ -29,6 +43,9 @@ ResumePageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   description: PropTypes.string,
+  my_name: PropTypes.string,
+  my_skills: PropTypes.string,
+  statement: PropTypes.string
 };
 
 const ResumePage = ({ data }) => {
@@ -40,6 +57,9 @@ const ResumePage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         description={frontmatter.description}
+        my_name={frontmatter.description}
+        my_skills={frontmatter.description}
+        statement={frontmatter.description}
       />
     </Layout>
   );
@@ -48,9 +68,9 @@ const ResumePage = ({ data }) => {
 ResumePage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+      frontmatter: PropTypes.object
+    })
+  })
 };
 
 export default ResumePage;
@@ -62,6 +82,9 @@ export const ResumeQuery = graphql`
         title
         heading
         description
+        my_name
+        my_skills
+        statement
       }
     }
   }
