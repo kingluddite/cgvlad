@@ -80,3 +80,6 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
+          - {label: MyName, name: my_name, widget: string}
+          - {label: MySkills, name: my_skills, widget: string}
+          - {label: Statement, name: statement, widget: string}

@@ -15,27 +15,12 @@ export const ResumePageTemplate = ({
 }) => (
   <>
     <Helmet title={`${title} | `} />
-    <div class="id">
+    <div className="id">
       <h1>{my_name}</h1>
       <h2>{my_skills}</h2>
     </div>
 
-    <p class="statement">{statement}</p>
-
-    <div id="main" className="alt-colors">
-      <section id="section-one">
-        <div className="inner">
-          <h2>{title}</h2>
-        </div>
-      </section>
-      <section id="section-two">
-        <div className="inner">
-          <div className="grid-wrapper">
-            <div className="col-4">{description}</div>
-          </div>
-        </div>
-      </section>
-    </div>
+    <p className="statement">{statement}</p>
   </>
 );
 
