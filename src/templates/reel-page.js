@@ -7,7 +7,12 @@ import Testimonials from '../components/Testimonials';
 
 // import logo from '../assets/images/cgvlad-logo.png';
 
-export const ReelPageTemplate = ({ title, heading, description }) => (
+export const ReelPageTemplate = ({
+  title,
+  heading,
+  description,
+  testimonials
+}) => (
   <>
     <Helmet title={`${title} | `} />
     <div id="main" className="alt-colors">
@@ -23,7 +28,7 @@ export const ReelPageTemplate = ({ title, heading, description }) => (
           </div>
         </div>
       </section>
-      <Testimonials />
+      <Testimonials testimonials={testimonials} />
     </div>
   </>
 );
@@ -44,6 +49,7 @@ const ReelPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         description={frontmatter.description}
+        testimonials={frontmatter.testimonials}
       />
     </Layout>
   );
