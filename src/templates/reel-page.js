@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
+import Testimonials from '../components/Testimonials';
+
 // import logo from '../assets/images/cgvlad-logo.png';
 
 export const ReelPageTemplate = ({ title, heading, description }) => (
@@ -21,6 +23,7 @@ export const ReelPageTemplate = ({ title, heading, description }) => (
           </div>
         </div>
       </section>
+      <Testimonials />
     </div>
   </>
 );
@@ -29,6 +32,7 @@ ReelPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   description: PropTypes.string,
+  testimonials: PropTypes.array
 };
 
 const ReelPage = ({ data }) => {
@@ -48,9 +52,9 @@ const ReelPage = ({ data }) => {
 ReelPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+      frontmatter: PropTypes.object
+    })
+  })
 };
 
 export default ReelPage;
@@ -62,6 +66,10 @@ export const ReelQuery = graphql`
         title
         heading
         description
+        testimonials {
+          author
+          quote
+        }
       }
     }
   }

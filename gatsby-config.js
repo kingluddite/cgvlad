@@ -5,19 +5,19 @@ module.exports = {
     description: 'A Web Application Showcasing the CGI skills of Vlad',
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
-      options: {
-        fonts: [
-          {
-            family: `Roboto`,
-          
-          {
-            family: '"Open Sans"',
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-prefetch-google-fonts',
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Roboto`,
+    //       },
+    //       {
+    //         family: '"Open Sans"',
+    //       },
+    //     ],
+    //   },
+    // },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sass',
     {

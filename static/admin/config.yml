@@ -83,3 +83,5 @@ collections:
           - {label: MyName, name: my_name, widget: string}
           - {label: MySkills, name: my_skills, widget: string}
           - {label: Statement, name: statement, widget: string}
+          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]} 
+
