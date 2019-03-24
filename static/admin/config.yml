@@ -72,6 +72,7 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
+          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]} 
       - file: "src/pages/resume/index.md"
         label: "Resume Page"
         name: "resume"
@@ -83,5 +84,4 @@ collections:
           - {label: MyName, name: my_name, widget: string}
           - {label: MySkills, name: my_skills, widget: string}
           - {label: Statement, name: statement, widget: string}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]} 
 
