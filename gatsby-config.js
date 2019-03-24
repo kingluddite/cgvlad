@@ -20,11 +20,11 @@ module.exports = {
     // },
     'gatsby-plugin-styled-components',
     {
-    'gatsby-plugin-netlify-identity-widget'
+      resolve: 'gatsby-plugin-netlify-identity-widget',
       options: {
-        container: '#netlify-modal'
-      }
+        container: '#netlify-modal',
       },
+    },
     'gatsby-plugin-sass',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
