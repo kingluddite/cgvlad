@@ -26,6 +26,8 @@
 		}
 
 	body {
+    // never have horizontal scrolling (image gallery)
+    overflow-x: hidden;
     height: 100%;
 		background: _palette(bg);
 
